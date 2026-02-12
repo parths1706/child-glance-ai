@@ -128,7 +128,7 @@ def screen_child_details():
 
     st.caption("Birth time helps with deeper insights. Approximate is fine — or skip it.")
 
-    if st.button("See DNA Insights 🧬", key="go_insights"):
+    if st.button("See Insights 🧬", key="go_insights"):
         if not city:
             st.error("Wait! We need a city to calculate the insights. Please select or type one! 🙏")
             st.stop()

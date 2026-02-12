@@ -3,40 +3,45 @@ import json
 
 def generate_parenting_tips(child_data, selected_traits):
     """
-    selected_traits = FINAL traits chosen by the parent
-    (after removals and additions)
+    Generate parenting tips based on child's personality traits.
+    Tips focus on helping parents manage and improve the child's behavior.
     """
-   
+    
     traits_text = "\n".join(
         f"- {t.get('title', 'Trait')}: {t.get('description', '')}"
         for t in selected_traits
     )
 
     prompt = f"""
-You are the world's best and most fun parenting coach! 🌟🦄
+You are the BEST parenting coach in the whole world! 🌟👨‍👩‍👧💖
 
 TASK:
-Give 4-6 super simple parenting tips. 
+Give 4-6 super helpful parenting tips based on the child's personality traits.
 
 RULES:
-1. VERY SIMPLE WORDS: Use words so easy that even a child could understand! No "fancy" or "expert" talk. 👶
-2. FUN & PLAYFUL: Write like a fun cartoon! Use LOTS of emojis! 🎈🌈🍭
-3. ASTROLOGY MAGIC: Since this child is from {child_data.get("country", "")}, include tips about their horoscope or moon alignment if it's in their traits! ✨🌙
-4. BRIEF BUT SIMPLE : Keep each tip 4-5 sentences in explain tips what to do and how to do .
-5. NO FILLER: Just the JSON list.
+1. BABY WORDS ONLY: Use very very simple English! Like talking to a 5 year old! No big words! 👶✨
+2. LOTS OF EMOJIS: Put emojis EVERYWHERE to make it fun and happy! 🎈🌈🍭🎉
+3. WHAT & HOW: Tell parents WHAT to do and HOW to do it (step by step!)
+4. DETAILED: Each tip should be 4-5 sentences long
+5. PERSONALITY FOCUS: Give tips that help with the child's specific personality traits
+6. MAKE IT FUN: Parents should LOVE reading this! Not boring! 🤗💕
 
 FORMAT EXAMPLE:
 [
   {{
-    "title": "Happy Moon Time! 🌙",
-    "description": "Your child is sensitive like the moon! Give them a big hug and speak softly tonight. It makes them feel safe! 🤗✨"
+    "title": "Help Your Angry Child Stay Calm 😤➡️😊",
+    "description": "Your child gets angry sometimes. That's okay! 💕 What to do: Teach them to take deep breaths when upset. How to do it: When they get mad, sit with them and count to 10 together while breathing slowly. 🧘‍♀️ Then give them a big hug! 🤗 This helps them feel calm and safe. Do this every day and they will learn to stay peaceful! ✨"
   }}
 ]
 
 CONTEXT:
-Traits & Insights: {traits_text}
+Child's Personality Traits:
+{traits_text}
+
 Child Age: {child_data.get("age_years", 0)} years
 Country: {child_data.get("country", "")}
+
+Remember: SIMPLE WORDS + LOTS OF EMOJIS + FUN TO READ! 🎊
 """
 
     for _ in range(3):

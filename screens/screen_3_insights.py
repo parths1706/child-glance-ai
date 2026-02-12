@@ -36,12 +36,14 @@ def screen_insights():
     for idx, glance in enumerate(st.session_state.selected_insights):
         col1, col2 = st.columns([0.88, 0.12])
         
+        category = glance.get("category", "INSIGHT")
+        
         with col1:
              st.markdown(
                 f"""
                 <div class="insight-card" style="margin-bottom:0.8rem; padding:1.2rem; background:white; border-radius:15px; border-left: 5px solid #7c3aed; box-shadow: 0 4px 12px rgba(0,0,0,0.05)">
                     <div style="font-size:0.75rem; font-weight:700; color:#7c3aed; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem">
-                        {glance.get("category", "INSIGHT")}
+                        {category}
                     </div>
                     <div style="font-size:1.15rem; font-weight:700; color:#1f2937; margin-bottom:0.5rem">
                         {glance.get("title", "Insight")}

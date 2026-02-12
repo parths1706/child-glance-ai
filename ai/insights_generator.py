@@ -1,100 +1,108 @@
 from ai.llm_client import ask_llm
 
-def generate_insights(child_data):
+def generate_astro_analysis(child_data):
+    """
+    Step 1: Generate horoscope, Rashi, and moon alignment analysis.
+    Step 2: Extract personality trait keywords from the astrological data.
+    
+    Returns: List of personality keywords (e.g., ["energetic", "leader", "impulsive"])
+    """
     is_indian = child_data.get("country", "") == "India"
-
-    context_instruction = ""
-    if is_indian:
-        context_instruction = """
-        IMPORTANT INDIAN CONTEXT:
-        - Use Indian birth timing traditions ONLY as soft cultural tendencies.
-        - Do NOT mention astrology terms, planets, rashis, nakshatras.
-        - Frame insights as:
-          "Children born around this time often show..."
-          "A commonly observed early-life tendency is..."
-        - NO destiny, NO future prediction.
-        - Focus on emotional needs, temperament, and learning style.
-        """
-
+    
+    if not is_indian:
+        # For non-Indian children, return generic keywords based on age
+        age = child_data.get("age_years", 0)
+        if age <= 2:
+            return ["curious", "playful", "dependent"]
+        elif age <= 5:
+            return ["energetic", "curious", "creative"]
+        elif age <= 8:
+            return ["active", "friendly", "imaginative"]
+        else:
+            return ["independent", "social", "analytical"]
+    
     prompt = f"""
-You are a child development expert combining behavioral psychology
-and culturally-aware parenting insights.
+ACT AS A PROFESSIONAL INDIAN PANDIT (ASTROLOGER):
+- You are an expert in Vedic Astrology (Jyotish), Rashi Shastra, and Nakshatras.
+- Based on the child's Birth Date, Birth Time, and Birth City, you MUST determine their:
+    1. Rashi (Moon Sign): Choose precisely one from the 12 Vedic Rashi signs
+    2. Moon Alignment and Nakshatra
+    3. Personality tendencies according to their Rashi
 
 TASK:
-Generate 4–5 short "Child Glance" insights for a parent.
+Analyze the child's astrological profile and extract PERSONALITY TRAIT KEYWORDS.
 
-{context_instruction}
+STEP 1: Determine Rashi and Moon Alignment
+- Calculate the correct Rashi based on DOB and Birth Time
+- Identify the Nakshatra and Moon position
 
-WHAT THESE INSIGHTS ARE:
-- Observed personality tendencies
-- Emotional patterns
-- Learning or social preferences
-- Helpful for understanding a child today
+STEP 2: Extract Personality Keywords
+Based on the Rashi and astrological analysis, extract 5-8 personality trait keywords.
+Examples: energetic, calm, leader, shy, analytical, creative, impulsive, patient, etc.
 
-OUTPUT FORMAT (STRICT JSON LIST ONLY):
-[
-  {{
-    "id": "unique_trait_id_snake_case",
-    "category": "Personality | Emotional | Learning | Social",
-    "title": "Short Trait Title",
-    "description": "One short sentence (max 8 words).",
-    "source": "cultural_tendency | behavioral_psychology"
-  }}
-]
+OUTPUT FORMAT (STRICT JSON ONLY):
+{{
+  "rashi": "Name of Rashi (e.g., Mesh, Kark, Dhanu)",
+  "nakshatra": "Name of Nakshatra",
+  "moon_alignment": "Brief description of moon position",
+  "personality_keywords": ["keyword1", "keyword2", "keyword3", "keyword4", "keyword5"]
+}}
 
 RULES:
-- Calm, warm, modern tone
-- NO medical claims
-- NO future predictions
-- NO negative framing
 - NO extra text outside JSON
+- personality_keywords should be simple adjectives describing behavior/temperament
+- Focus on behavioral traits, not spiritual predictions
 
 CHILD PROFILE:
-- Age: {child_data.get("age_years", 0)} years, {child_data.get("age_months", 0)} months
+- Age: {child_data.get("age_years", 0)} years
 - DOB: {child_data.get("dob")}
 - Birth Time: {child_data.get("birth_time", "Not provided")}
 - Location: {child_data.get("city")}, {child_data.get("country")}
 """
+    
+    response = ask_llm(prompt)
+    
+    # Try to parse the response
+    try:
+        import json
+        from ai.llm_client import clean_json_response
+        cleaned = clean_json_response(response)
+        if cleaned:
+            data = json.loads(cleaned)
+            return data.get("personality_keywords", [])
+    except:
+        pass
+    
+    # Fallback: return generic keywords
+    return ["curious", "energetic", "friendly"]
 
-    return ask_llm(prompt)
 
-def suggest_additional_traits(child_data):
-    is_indian = child_data.get("country", "") == "India"
-    
-    prompt = f"""
-    You are a child development expert. Based on the profile below, suggest 6-8 short personality traits 
-    or emotional tendencies that PARENTS often notice or want to know about.
-    
-    CHILD PROFILE:
-    - Age: {child_data.get("age_years", 0)}y {child_data.get("age_months", 0)}m
-    - Location: {child_data.get("country")}
-    
-    {"(Include traits common in Indian cultural context but frame them behaviorally)" if is_indian else ""}
-    
-    OUTPUT: A simple comma-separated list of short names (e.g., Selective Eater, Quick Learner, High Energy).
-    NO extra text.
+def generate_insights(child_data):
     """
-    return ask_llm(prompt).split(",")
-
-def generate_specific_insight(child_data, trait_name):
-    is_indian = child_data.get("country", "") == "India"
+    NEW FLOW:
+    1. Generate astrological analysis and extract personality keywords
+    2. Match keywords against traits database using AI
+    3. Return matched traits as insights
     
-    prompt = f"""
-    Generate ONE child personality insight in JSON format for the trait: "{trait_name}".
-    
-    CHILD PROFILE:
-    - Age: {child_data.get("age_years", 0)}y {child_data.get("age_months", 0)}m
-    - Location: {child_data.get("country")}
-    
-    JSON FORMAT:
-    {{
-      "id": "unique_string",
-      "category": "Personality | Emotional | Learning | Social",
-      "title": "{trait_name}",
-      "description": "One short sentence (max 8 words).",
-      "source": "cultural_tendency | behavioral_psychology"
-    }}
-    
-    RULES: Warm tone, positive framing, ONLY JSON output.
+    This function is called by insight_selector.py
     """
-    return ask_llm(prompt)
+    from ai.trait_matcher import match_traits_with_ai
+    
+    # Step 1: Get personality keywords from astrology
+    personality_keywords = generate_astro_analysis(child_data)
+    
+    # Step 2: Match against database
+    matched_traits = match_traits_with_ai(personality_keywords, max_matches=6)
+    
+    # Step 3: Format as insights
+    insights = []
+    for trait in matched_traits:
+        insights.append({
+            "id": trait["id"],
+            "category": trait["category"],
+            "title": trait["title"],
+            "description": trait["description"],
+            "source": "personality_trait"
+        })
+    
+    return insights

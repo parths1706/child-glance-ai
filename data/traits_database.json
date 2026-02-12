@@ -1,0 +1,926 @@
+[
+    {
+        "id": "introvert",
+        "title": "Introvert",
+        "description": "Prefers quiet activities and needs alone time to recharge.",
+        "category": "Social",
+        "keywords": [
+            "quiet",
+            "shy",
+            "reserved",
+            "solitary",
+            "thoughtful",
+            "introspective"
+        ]
+    },
+    {
+        "id": "extrovert",
+        "title": "Extrovert",
+        "description": "Loves being around people and gains energy from social interactions.",
+        "category": "Social",
+        "keywords": [
+            "outgoing",
+            "social",
+            "talkative",
+            "energetic",
+            "friendly",
+            "expressive"
+        ]
+    },
+    {
+        "id": "angry",
+        "title": "Angry",
+        "description": "Gets upset or frustrated easily and may have trouble controlling temper.",
+        "category": "Emotional",
+        "keywords": [
+            "frustrated",
+            "irritable",
+            "hot-tempered",
+            "aggressive",
+            "impatient"
+        ]
+    },
+    {
+        "id": "calm",
+        "title": "Calm",
+        "description": "Stays peaceful and relaxed even in stressful situations.",
+        "category": "Emotional",
+        "keywords": [
+            "peaceful",
+            "relaxed",
+            "composed",
+            "serene",
+            "patient",
+            "tranquil"
+        ]
+    },
+    {
+        "id": "analytical",
+        "title": "Analytical",
+        "description": "Thinks logically and loves solving problems step by step.",
+        "category": "Cognitive",
+        "keywords": [
+            "logical",
+            "rational",
+            "problem-solver",
+            "systematic",
+            "methodical"
+        ]
+    },
+    {
+        "id": "curious",
+        "title": "Curious",
+        "description": "Always asking questions and wanting to learn new things.",
+        "category": "Cognitive",
+        "keywords": [
+            "inquisitive",
+            "questioning",
+            "explorer",
+            "interested",
+            "investigative"
+        ]
+    },
+    {
+        "id": "helpful",
+        "title": "Helpful",
+        "description": "Enjoys helping others and being kind to people around them.",
+        "category": "Social",
+        "keywords": [
+            "kind",
+            "caring",
+            "supportive",
+            "generous",
+            "compassionate",
+            "altruistic"
+        ]
+    },
+    {
+        "id": "creative",
+        "title": "Creative",
+        "description": "Loves making new things and thinking in imaginative ways.",
+        "category": "Cognitive",
+        "keywords": [
+            "imaginative",
+            "artistic",
+            "inventive",
+            "original",
+            "innovative"
+        ]
+    },
+    {
+        "id": "shy",
+        "title": "Shy",
+        "description": "Feels nervous or uncomfortable around new people or situations.",
+        "category": "Social",
+        "keywords": [
+            "timid",
+            "bashful",
+            "reserved",
+            "hesitant",
+            "withdrawn"
+        ]
+    },
+    {
+        "id": "confident",
+        "title": "Confident",
+        "description": "Believes in themselves and feels comfortable trying new things.",
+        "category": "Emotional",
+        "keywords": [
+            "self-assured",
+            "bold",
+            "brave",
+            "fearless",
+            "assertive"
+        ]
+    },
+    {
+        "id": "anxious",
+        "title": "Anxious",
+        "description": "Worries a lot and feels nervous about things that might happen.",
+        "category": "Emotional",
+        "keywords": [
+            "worried",
+            "nervous",
+            "fearful",
+            "stressed",
+            "uneasy"
+        ]
+    },
+    {
+        "id": "energetic",
+        "title": "Energetic",
+        "description": "Full of energy and always ready to move and play.",
+        "category": "Behavioral",
+        "keywords": [
+            "active",
+            "lively",
+            "dynamic",
+            "vigorous",
+            "spirited",
+            "hyperactive"
+        ]
+    },
+    {
+        "id": "lazy",
+        "title": "Lazy",
+        "description": "Prefers resting and may avoid physical activities or chores.",
+        "category": "Behavioral",
+        "keywords": [
+            "inactive",
+            "sluggish",
+            "unmotivated",
+            "lethargic",
+            "idle"
+        ]
+    },
+    {
+        "id": "stubborn",
+        "title": "Stubborn",
+        "description": "Sticks to their own ideas and doesn't like changing their mind.",
+        "category": "Behavioral",
+        "keywords": [
+            "determined",
+            "headstrong",
+            "inflexible",
+            "persistent",
+            "obstinate"
+        ]
+    },
+    {
+        "id": "flexible",
+        "title": "Flexible",
+        "description": "Adapts easily to changes and new situations.",
+        "category": "Behavioral",
+        "keywords": [
+            "adaptable",
+            "open-minded",
+            "versatile",
+            "adjustable",
+            "accommodating"
+        ]
+    },
+    {
+        "id": "organized",
+        "title": "Organized",
+        "description": "Likes keeping things neat and in order.",
+        "category": "Behavioral",
+        "keywords": [
+            "orderly",
+            "tidy",
+            "systematic",
+            "structured",
+            "methodical"
+        ]
+    },
+    {
+        "id": "messy",
+        "title": "Messy",
+        "description": "Tends to be disorganized and may leave things scattered around.",
+        "category": "Behavioral",
+        "keywords": [
+            "disorganized",
+            "cluttered",
+            "chaotic",
+            "untidy",
+            "careless"
+        ]
+    },
+    {
+        "id": "empathetic",
+        "title": "Empathetic",
+        "description": "Understands and feels what others are feeling.",
+        "category": "Emotional",
+        "keywords": [
+            "compassionate",
+            "understanding",
+            "sensitive",
+            "caring",
+            "sympathetic"
+        ]
+    },
+    {
+        "id": "independent",
+        "title": "Independent",
+        "description": "Likes doing things on their own without much help.",
+        "category": "Behavioral",
+        "keywords": [
+            "self-reliant",
+            "autonomous",
+            "self-sufficient",
+            "resourceful"
+        ]
+    },
+    {
+        "id": "dependent",
+        "title": "Dependent",
+        "description": "Needs support and guidance from others to feel secure.",
+        "category": "Behavioral",
+        "keywords": [
+            "reliant",
+            "needy",
+            "clingy",
+            "attached",
+            "insecure"
+        ]
+    },
+    {
+        "id": "adventurous",
+        "title": "Adventurous",
+        "description": "Loves trying new things and exploring unknown places.",
+        "category": "Behavioral",
+        "keywords": [
+            "daring",
+            "bold",
+            "exploratory",
+            "risk-taking",
+            "brave"
+        ]
+    },
+    {
+        "id": "cautious",
+        "title": "Cautious",
+        "description": "Thinks carefully before acting and prefers safe choices.",
+        "category": "Behavioral",
+        "keywords": [
+            "careful",
+            "prudent",
+            "wary",
+            "hesitant",
+            "conservative"
+        ]
+    },
+    {
+        "id": "competitive",
+        "title": "Competitive",
+        "description": "Wants to win and be the best at everything they do.",
+        "category": "Social",
+        "keywords": [
+            "ambitious",
+            "driven",
+            "rivalry",
+            "winning-focused"
+        ]
+    },
+    {
+        "id": "cooperative",
+        "title": "Cooperative",
+        "description": "Works well with others and enjoys team activities.",
+        "category": "Social",
+        "keywords": [
+            "collaborative",
+            "team-player",
+            "helpful",
+            "agreeable"
+        ]
+    },
+    {
+        "id": "perfectionist",
+        "title": "Perfectionist",
+        "description": "Wants everything to be perfect and may get upset with mistakes.",
+        "category": "Cognitive",
+        "keywords": [
+            "meticulous",
+            "detail-oriented",
+            "precise",
+            "exacting"
+        ]
+    },
+    {
+        "id": "easygoing",
+        "title": "Easygoing",
+        "description": "Relaxed about things and doesn't worry about small details.",
+        "category": "Emotional",
+        "keywords": [
+            "laid-back",
+            "relaxed",
+            "carefree",
+            "tolerant",
+            "flexible"
+        ]
+    },
+    {
+        "id": "sensitive",
+        "title": "Sensitive",
+        "description": "Feels emotions deeply and may get hurt easily.",
+        "category": "Emotional",
+        "keywords": [
+            "emotional",
+            "tender",
+            "delicate",
+            "vulnerable",
+            "reactive"
+        ]
+    },
+    {
+        "id": "resilient",
+        "title": "Resilient",
+        "description": "Bounces back quickly from setbacks and disappointments.",
+        "category": "Emotional",
+        "keywords": [
+            "tough",
+            "strong",
+            "adaptable",
+            "robust",
+            "hardy"
+        ]
+    },
+    {
+        "id": "impulsive",
+        "title": "Impulsive",
+        "description": "Acts quickly without thinking about consequences.",
+        "category": "Behavioral",
+        "keywords": [
+            "spontaneous",
+            "rash",
+            "hasty",
+            "reckless",
+            "unplanned"
+        ]
+    },
+    {
+        "id": "thoughtful",
+        "title": "Thoughtful",
+        "description": "Thinks carefully before acting and considers others' feelings.",
+        "category": "Cognitive",
+        "keywords": [
+            "considerate",
+            "reflective",
+            "deliberate",
+            "mindful"
+        ]
+    },
+    {
+        "id": "optimistic",
+        "title": "Optimistic",
+        "description": "Sees the bright side of things and expects good outcomes.",
+        "category": "Emotional",
+        "keywords": [
+            "positive",
+            "hopeful",
+            "cheerful",
+            "upbeat",
+            "enthusiastic"
+        ]
+    },
+    {
+        "id": "pessimistic",
+        "title": "Pessimistic",
+        "description": "Tends to expect negative outcomes and focus on problems.",
+        "category": "Emotional",
+        "keywords": [
+            "negative",
+            "gloomy",
+            "doubtful",
+            "cynical",
+            "worried"
+        ]
+    },
+    {
+        "id": "playful",
+        "title": "Playful",
+        "description": "Loves playing games and having fun with others.",
+        "category": "Social",
+        "keywords": [
+            "fun-loving",
+            "jovial",
+            "lighthearted",
+            "spirited",
+            "mischievous"
+        ]
+    },
+    {
+        "id": "serious",
+        "title": "Serious",
+        "description": "Takes things seriously and may not joke around much.",
+        "category": "Emotional",
+        "keywords": [
+            "solemn",
+            "earnest",
+            "grave",
+            "focused",
+            "mature"
+        ]
+    },
+    {
+        "id": "leader",
+        "title": "Leader",
+        "description": "Naturally takes charge and guides others in activities.",
+        "category": "Social",
+        "keywords": [
+            "commanding",
+            "authoritative",
+            "influential",
+            "directive"
+        ]
+    },
+    {
+        "id": "follower",
+        "title": "Follower",
+        "description": "Prefers letting others lead and following their guidance.",
+        "category": "Social",
+        "keywords": [
+            "compliant",
+            "submissive",
+            "obedient",
+            "passive"
+        ]
+    },
+    {
+        "id": "patient",
+        "title": "Patient",
+        "description": "Can wait calmly and doesn't get upset when things take time.",
+        "category": "Emotional",
+        "keywords": [
+            "tolerant",
+            "understanding",
+            "calm",
+            "composed",
+            "enduring"
+        ]
+    },
+    {
+        "id": "impatient",
+        "title": "Impatient",
+        "description": "Wants things to happen quickly and gets frustrated waiting.",
+        "category": "Emotional",
+        "keywords": [
+            "restless",
+            "eager",
+            "hasty",
+            "intolerant",
+            "anxious"
+        ]
+    },
+    {
+        "id": "focused",
+        "title": "Focused",
+        "description": "Can concentrate on tasks for long periods without distraction.",
+        "category": "Cognitive",
+        "keywords": [
+            "concentrated",
+            "attentive",
+            "dedicated",
+            "absorbed",
+            "intent"
+        ]
+    },
+    {
+        "id": "distracted",
+        "title": "Distracted",
+        "description": "Has trouble paying attention and gets sidetracked easily.",
+        "category": "Cognitive",
+        "keywords": [
+            "unfocused",
+            "scattered",
+            "inattentive",
+            "absent-minded"
+        ]
+    },
+    {
+        "id": "honest",
+        "title": "Honest",
+        "description": "Always tells the truth and doesn't like lying.",
+        "category": "Behavioral",
+        "keywords": [
+            "truthful",
+            "sincere",
+            "genuine",
+            "trustworthy",
+            "straightforward"
+        ]
+    },
+    {
+        "id": "deceptive",
+        "title": "Deceptive",
+        "description": "May tell lies or hide the truth to avoid trouble.",
+        "category": "Behavioral",
+        "keywords": [
+            "dishonest",
+            "untruthful",
+            "misleading",
+            "manipulative"
+        ]
+    },
+    {
+        "id": "respectful",
+        "title": "Respectful",
+        "description": "Shows respect to elders and follows rules politely.",
+        "category": "Social",
+        "keywords": [
+            "polite",
+            "courteous",
+            "well-mannered",
+            "considerate",
+            "deferential"
+        ]
+    },
+    {
+        "id": "disrespectful",
+        "title": "Disrespectful",
+        "description": "May talk back or not follow rules and authority.",
+        "category": "Social",
+        "keywords": [
+            "rude",
+            "impolite",
+            "insolent",
+            "defiant",
+            "discourteous"
+        ]
+    },
+    {
+        "id": "generous",
+        "title": "Generous",
+        "description": "Loves sharing toys and treats with others.",
+        "category": "Social",
+        "keywords": [
+            "giving",
+            "charitable",
+            "unselfish",
+            "kind",
+            "benevolent"
+        ]
+    },
+    {
+        "id": "selfish",
+        "title": "Selfish",
+        "description": "Wants to keep things for themselves and may not share.",
+        "category": "Social",
+        "keywords": [
+            "self-centered",
+            "greedy",
+            "possessive",
+            "egocentric"
+        ]
+    },
+    {
+        "id": "responsible",
+        "title": "Responsible",
+        "description": "Takes care of their duties and can be trusted with tasks.",
+        "category": "Behavioral",
+        "keywords": [
+            "reliable",
+            "dependable",
+            "accountable",
+            "trustworthy",
+            "dutiful"
+        ]
+    },
+    {
+        "id": "irresponsible",
+        "title": "Irresponsible",
+        "description": "May forget tasks or not take their duties seriously.",
+        "category": "Behavioral",
+        "keywords": [
+            "unreliable",
+            "careless",
+            "negligent",
+            "reckless"
+        ]
+    },
+    {
+        "id": "brave",
+        "title": "Brave",
+        "description": "Faces fears and challenges without backing down.",
+        "category": "Emotional",
+        "keywords": [
+            "courageous",
+            "fearless",
+            "bold",
+            "valiant",
+            "heroic"
+        ]
+    },
+    {
+        "id": "fearful",
+        "title": "Fearful",
+        "description": "Gets scared easily and avoids things that seem dangerous.",
+        "category": "Emotional",
+        "keywords": [
+            "afraid",
+            "scared",
+            "timid",
+            "cowardly",
+            "anxious"
+        ]
+    },
+    {
+        "id": "friendly",
+        "title": "Friendly",
+        "description": "Makes friends easily and is kind to everyone.",
+        "category": "Social",
+        "keywords": [
+            "amiable",
+            "sociable",
+            "warm",
+            "approachable",
+            "cordial"
+        ]
+    },
+    {
+        "id": "unfriendly",
+        "title": "Unfriendly",
+        "description": "May be cold or distant with others and hard to approach.",
+        "category": "Social",
+        "keywords": [
+            "aloof",
+            "distant",
+            "hostile",
+            "standoffish",
+            "unapproachable"
+        ]
+    },
+    {
+        "id": "disciplined",
+        "title": "Disciplined",
+        "description": "Follows routines and rules without needing reminders.",
+        "category": "Behavioral",
+        "keywords": [
+            "self-controlled",
+            "orderly",
+            "regulated",
+            "structured"
+        ]
+    },
+    {
+        "id": "undisciplined",
+        "title": "Undisciplined",
+        "description": "Has trouble following rules and sticking to routines.",
+        "category": "Behavioral",
+        "keywords": [
+            "unruly",
+            "wild",
+            "chaotic",
+            "uncontrolled",
+            "disobedient"
+        ]
+    },
+    {
+        "id": "talkative",
+        "title": "Talkative",
+        "description": "Loves talking and sharing stories with everyone.",
+        "category": "Social",
+        "keywords": [
+            "chatty",
+            "verbose",
+            "communicative",
+            "expressive",
+            "gabby"
+        ]
+    },
+    {
+        "id": "quiet",
+        "title": "Quiet",
+        "description": "Doesn't talk much and prefers listening to others.",
+        "category": "Social",
+        "keywords": [
+            "silent",
+            "reserved",
+            "taciturn",
+            "soft-spoken",
+            "reticent"
+        ]
+    },
+    {
+        "id": "active",
+        "title": "Active",
+        "description": "Always on the move and loves physical activities.",
+        "category": "Behavioral",
+        "keywords": [
+            "energetic",
+            "dynamic",
+            "busy",
+            "vigorous",
+            "sporty"
+        ]
+    },
+    {
+        "id": "passive",
+        "title": "Passive",
+        "description": "Prefers calm activities and doesn't seek out action.",
+        "category": "Behavioral",
+        "keywords": [
+            "inactive",
+            "sedentary",
+            "quiet",
+            "still",
+            "docile"
+        ]
+    },
+    {
+        "id": "joyful",
+        "title": "Joyful",
+        "description": "Happy and cheerful most of the time.",
+        "category": "Emotional",
+        "keywords": [
+            "happy",
+            "cheerful",
+            "delighted",
+            "gleeful",
+            "merry"
+        ]
+    },
+    {
+        "id": "sad",
+        "title": "Sad",
+        "description": "Often feels down or unhappy about things.",
+        "category": "Emotional",
+        "keywords": [
+            "unhappy",
+            "melancholy",
+            "gloomy",
+            "sorrowful",
+            "dejected"
+        ]
+    },
+    {
+        "id": "loving",
+        "title": "Loving",
+        "description": "Shows lots of affection and care for family and friends.",
+        "category": "Emotional",
+        "keywords": [
+            "affectionate",
+            "tender",
+            "warm",
+            "caring",
+            "devoted"
+        ]
+    },
+    {
+        "id": "distant",
+        "title": "Distant",
+        "description": "Doesn't show much emotion or affection to others.",
+        "category": "Emotional",
+        "keywords": [
+            "cold",
+            "detached",
+            "aloof",
+            "unemotional",
+            "reserved"
+        ]
+    },
+    {
+        "id": "attentive",
+        "title": "Attentive",
+        "description": "Pays close attention to details and what others say.",
+        "category": "Cognitive",
+        "keywords": [
+            "observant",
+            "alert",
+            "mindful",
+            "watchful",
+            "aware"
+        ]
+    },
+    {
+        "id": "inattentive",
+        "title": "Inattentive",
+        "description": "Misses details and doesn't notice what's happening around them.",
+        "category": "Cognitive",
+        "keywords": [
+            "careless",
+            "negligent",
+            "oblivious",
+            "unobservant"
+        ]
+    },
+    {
+        "id": "forgiving",
+        "title": "Forgiving",
+        "description": "Lets go of grudges and forgives others easily.",
+        "category": "Emotional",
+        "keywords": [
+            "merciful",
+            "understanding",
+            "compassionate",
+            "lenient"
+        ]
+    },
+    {
+        "id": "grudge_holding",
+        "title": "Grudge-Holding",
+        "description": "Remembers wrongs and has trouble forgiving others.",
+        "category": "Emotional",
+        "keywords": [
+            "resentful",
+            "unforgiving",
+            "vengeful",
+            "bitter"
+        ]
+    },
+    {
+        "id": "humble",
+        "title": "Humble",
+        "description": "Modest about their achievements and doesn't brag.",
+        "category": "Social",
+        "keywords": [
+            "modest",
+            "unassuming",
+            "down-to-earth",
+            "unpretentious"
+        ]
+    },
+    {
+        "id": "arrogant",
+        "title": "Arrogant",
+        "description": "Thinks they're better than others and may brag a lot.",
+        "category": "Social",
+        "keywords": [
+            "proud",
+            "conceited",
+            "boastful",
+            "haughty",
+            "egotistical"
+        ]
+    },
+    {
+        "id": "motivated",
+        "title": "Motivated",
+        "description": "Has strong drive to achieve goals and work hard.",
+        "category": "Behavioral",
+        "keywords": [
+            "driven",
+            "ambitious",
+            "determined",
+            "enthusiastic",
+            "inspired"
+        ]
+    },
+    {
+        "id": "unmotivated",
+        "title": "Unmotivated",
+        "description": "Lacks interest in goals and may not try hard at tasks.",
+        "category": "Behavioral",
+        "keywords": [
+            "apathetic",
+            "indifferent",
+            "listless",
+            "uninspired"
+        ]
+    },
+    {
+        "id": "expressive",
+        "title": "Expressive",
+        "description": "Shows emotions openly through words and actions.",
+        "category": "Emotional",
+        "keywords": [
+            "demonstrative",
+            "emotional",
+            "animated",
+            "vocal",
+            "open"
+        ]
+    },
+    {
+        "id": "reserved_emotions",
+        "title": "Emotionally Reserved",
+        "description": "Keeps feelings inside and doesn't show emotions much.",
+        "category": "Emotional",
+        "keywords": [
+            "stoic",
+            "unexpressive",
+            "controlled",
+            "restrained",
+            "guarded"
+        ]
+    }
+]
