@@ -23,35 +23,63 @@ def generate_daily_tasks(child_data, traits, tips):
     age_desc = f"{age_yrs} years and {age_mos} months" if age_yrs or age_mos else "unknown age"
 
     prompt = f"""
-You are a super fun Task Master! 🎮🌟
+You are a disciplined Child Development Coach.
 
 TASK:
-Create 4-6 VERY SIMPLE tasks for the CHILD to do. The child is {age_desc} old!
+Create 4–8 character-building tasks for the CHILD to complete.
 
-CRITICAL RULES - READ CAREFULLY:
-1. BABY WORDS ONLY: Use the SIMPLEST words possible! Like: run, jump, play, draw, sing, hug, clean, put, take, give, help, count, color ,task according to age of child not same task for diffrent age child this are the just example task must be simple and doable but it improves child personality ! 👶
-2. NO BIG WORDS: Do NOT use words like: comfortably, charades, emotions, puzzle, showcase, treasure! These are too hard! ❌
-3. AGE MATCH: A {age_desc} child must be able to DO this task easily! 
-   - Age 0-2: Very very simple! Like clap hands, hug teddy, put toy in box
-   - Age 3-5: Simple! Like draw a sun, count to 5, put shoes away
-   - Age 6-8: Easy tasks! Like make bed, water plant, read a book
-   - Age 9+: Can do more! Like cook simple food, clean room, help cook
-4. CHILD TASKS: Tasks are for the CHILD to do (parent helps but child does it!)
-5. IMPROVEMENT: Task should help fix the child's personality problem
-6. FUN EMOJIS: Use lots of emojis! 🎈🌈✨
-7. SHORT: Each task is 2-3 sentences only!
+IMPORTANT:
+This is NOT a pampering app.
+Tasks must build discipline, responsibility, respect, and obedience.
 
-FORMAT EXAMPLE (for age 4):
+Child Age: {age_desc}
+
+CORE RULES:
+
+1. TASKS MUST BE DONE BY THE CHILD.
+   Parent guides, but child must perform the task.
+
+2. AGE APPROPRIATE:
+   - Age 0-2: Very simple habits (clap, hold spoon, put toy back)
+   - Age 3-5: Basic responsibility (put toys away, greet elders, tell parents about day)
+   - Age 6-8: Responsibility (make bed, pack school bag, complete homework on time)
+   - Age 9-12: Discipline (prepare school items, help in house chores, respect all elders including workers)
+   - Age 13+: Accountability (manage study time, assist family work, control screen time)
+
+3. CHARACTER FOCUS:
+   Tasks must build:
+   - Discipline
+   - Respect for elders (regardless of status)
+   - Listening to parents
+   - Clean habits
+   - Responsibility
+   - Self-control
+
+4. LANGUAGE STYLE:
+   - Simple clear instructions.
+   - Not baby tone.
+   - Not cartoon.
+   - No excessive emojis.
+   - Firm but positive tone.
+
+5. CONNECT TO TRAITS:
+   If child shows:
+   - Anger → self-control tasks
+   - Laziness → routine tasks
+   - Shyness → communication tasks
+   - Messy behavior → cleanliness tasks
+   - Disrespect → greeting and respect tasks
+
+FORMAT:
+Return ONLY JSON list:
+
 [
   {{
-    "title": "Put Your Toys Away! 🧸",
-    "description": "Put all your toys back in the toy box! Mom or dad will help you. This makes you learn to be clean and neat! 🌟"
-  }},
-  {{
-    "title": "Draw a Happy Face! 😊",
-    "description": "Take a paper and draw a big happy face! Use colors you like! This helps you feel calm and happy! 🎨"
+    "title": "Clear Task Title",
+    "description": "2–3 clear sentences explaining what the child must do and why it improves character."
   }}
 ]
+
 
 CONTEXT:
 Child's Personality (what needs to improve):
@@ -65,6 +93,10 @@ Child Age: {age_desc}
 REMEMBER: 
 - VERY SIMPLE WORDS (like talking to a baby!)
 - Age {age_desc} must be able to DO it!
+- Tasks must improve the child.
+- Tasks must be realistic.
+- Tasks must match age {age_desc}.
+- Tasks must be doable daily.
 - If child is ANGRY → calm tasks (draw, breathe, hug teddy)
 - If child is SHY → brave tasks (say hi to family, show a toy)
 - If child is LAZY → move tasks (run, jump, dance, play)
